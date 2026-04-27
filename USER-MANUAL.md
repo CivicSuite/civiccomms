@@ -1,0 +1,43 @@
+# CivicComms User Manual
+
+## For Non-Technical Users
+
+CivicComms helps staff turn city source material into public-facing draft communications. It can review whether sources and citations are present, outline meeting summaries, draft ordinance explainers, structure newsletters, suggest FAQ prompts, and create audience-specific variants.
+
+Current state: `0.1.0` public communications foundation release. CivicComms does not publish or post autonomously, create campaign or advocacy content, provide legal advice, certify translations, call live LLMs, post to social media, or replace a communications system of record. Staff own every draft, citation, approval, and publication decision.
+
+## For IT and Technical Staff
+
+CivicComms is a FastAPI Python package pinned to `civiccore==0.2.0`. The current runtime exposes:
+
+- `GET /`
+- `GET /health`
+- `GET /civiccomms`
+- `POST /api/v1/civiccomms/source-review`
+- `POST /api/v1/civiccomms/meeting-summary`
+- `POST /api/v1/civiccomms/ordinance-summary`
+- `POST /api/v1/civiccomms/newsletter`
+- `POST /api/v1/civiccomms/faq`
+- `POST /api/v1/civiccomms/audience-variant`
+
+Run:
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest -q
+bash scripts/verify-release.sh
+```
+
+## Architecture
+
+```mermaid
+flowchart LR
+  Clerk["Clerk / communications staff"] --> CivicComms["CivicComms"]
+  CivicClerk["CivicClerk sources"] -. future connector .-> CivicComms
+  CivicCode["CivicCode sources"] -. future connector .-> CivicComms
+  CivicAccess["CivicAccess review"] -. future handoff .-> CivicComms
+  CivicComms --> CivicCore["CivicCore v0.2.0"]
+  CivicComms --> Drafts["Human-approved draft artifacts"]
+```
+
+CivicComms depends on CivicCore. CivicCore does not depend on CivicComms. CivicComms v0.1.0 uses deterministic sample source-backed drafting only; autonomous publication, campaign or advocacy content, legal advice, certified translation, live LLM calls, social media posting, and production communications-system integrations are future work.

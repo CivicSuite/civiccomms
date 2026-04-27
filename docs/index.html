@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CivicComms - source-backed public communications support</title>
+<style>
+body{margin:0;font-family:"Aptos","Segoe UI",sans-serif;color:#17202a;background:linear-gradient(135deg,#fff8ed,#eef8ff)}main,header,footer{width:min(1080px,calc(100% - 32px));margin:auto}header{padding:56px 0 24px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:#244f73;font-weight:800}h1{font:700 clamp(2.5rem,7vw,5.5rem)/.95 Georgia,serif;margin:.1em 0}.lede{font-size:1.25rem;line-height:1.6;max-width:820px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:rgba(255,255,255,.9);border:1px solid #dac7a4;border-radius:24px;padding:24px;box-shadow:0 18px 36px #26323b18}.badge{display:inline-block;background:#174f6f;color:white;padding:.5rem .8rem;border-radius:999px;font-weight:900}a{color:#244f73}:focus-visible{outline:4px solid #d8ad48;outline-offset:3px}@media(max-width:720px){.grid{grid-template-columns:1fr}header{padding-top:34px}}
+</style>
+</head>
+<body>
+<header>
+  <p class="eyebrow">CivicSuite / CivicComms</p>
+  <h1>Explain city work without losing the source trail.</h1>
+  <p class="lede">CivicComms v0.1.0 ships a foundation for source-readiness review, meeting summary outlines, ordinance explainers, newsletters, FAQ prompts, and audience-specific draft variants.</p>
+  <p><span class="badge">Shipping v0.1.0</span></p>
+</header>
+<main>
+  <section class="grid">
+    <article class="card"><h2>What ships</h2><ul><li>Source-readiness checks.</li><li>Meeting summary draft outlines.</li><li>Ordinance explainer drafts.</li><li>Newsletter and FAQ scaffolds.</li><li>Audience variant drafts.</li><li>Public sample UI at <code>/civiccomms</code>.</li></ul></article>
+    <article class="card"><h2>What does not ship</h2><p>CivicComms does not publish autonomously, create campaign or advocacy content, provide legal advice, certify translations, call live LLMs, post to social media, or replace a communications system of record.</p></article>
+    <article class="card"><h2>Repository</h2><p><a href="https://github.com/CivicSuite/civiccomms">github.com/CivicSuite/civiccomms</a></p></article>
+    <article class="card"><h2>Dependency</h2><p>Pinned to <code>civiccore==0.2.0</code>. CivicCore remains dependency-only; it never imports from CivicComms.</p></article>
+  </section>
+</main>
+<footer><p>Apache 2.0 code. CC BY 4.0 docs. Run locally by the city.</p></footer>
+</body>
+</html>
