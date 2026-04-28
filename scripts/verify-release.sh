@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="0.1.0"
+VERSION="0.1.1"
 
 python_cmd() {
   local candidates=()
@@ -36,11 +36,11 @@ version = pyproject["project"]["version"]
 init = (root / "civiccomms" / "__init__.py").read_text(encoding="utf-8")
 readme = (root / "README.md").read_text(encoding="utf-8")
 changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
-assert version == "0.1.0", version
-assert '__version__ = "0.1.0"' in init
-assert "v0.1.0" in readme
-assert "## [0.1.0] - 2026-04-27" in changelog
-assert "civiccore==0.2.0" in readme
+assert version == "0.1.1", version
+assert '__version__ = "0.1.1"' in init
+assert "v0.1.1" in readme
+assert "## [0.1.1] - 2026-04-28" in changelog
+assert "civiccore==0.3.0" in readme
 print("PASS: version surfaces synchronized")
 PY
 
@@ -61,10 +61,10 @@ rm -rf dist
 "$PYTHON" -m build
 (
   cd dist
-  sha256sum civiccomms-0.1.0-py3-none-any.whl civiccomms-0.1.0.tar.gz > SHA256SUMS.txt
+  sha256sum civiccomms-0.1.1-py3-none-any.whl civiccomms-0.1.1.tar.gz > SHA256SUMS.txt
 )
-test -f dist/civiccomms-0.1.0-py3-none-any.whl
-test -f dist/civiccomms-0.1.0.tar.gz
+test -f dist/civiccomms-0.1.1-py3-none-any.whl
+test -f dist/civiccomms-0.1.1.tar.gz
 test -s dist/SHA256SUMS.txt
 echo "PASS: build artifacts and SHA256SUMS.txt created"
 

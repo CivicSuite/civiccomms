@@ -2,7 +2,7 @@
 
 CivicComms is the CivicSuite module for source-backed public explainers, meeting summaries, ordinance summaries, newsletters, FAQs, and audience-specific draft variants.
 
-Current state: **v0.1.0 public communications foundation release**. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic source-readiness review, meeting summary draft outlines, ordinance explainer drafts, newsletter scaffolds, FAQ prompts, audience-variant drafts, and accessible public sample UI at `/civiccomms`. It does **not** ship autonomous publication, campaign or advocacy content, legal advice, certified translation, live LLM calls, social media posting, or communications system-of-record integrations.
+Current state: **v0.1.1 public communications foundation release**. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic source-readiness review, meeting summary draft outlines, ordinance explainer drafts, newsletter scaffolds, FAQ prompts, audience-variant drafts, and accessible public sample UI at `/civiccomms`. It does **not** ship autonomous publication, campaign or advocacy content, legal advice, certified translation, live LLM calls, social media posting, or communications system-of-record integrations.
 
 ## What CivicComms Does
 
@@ -19,7 +19,7 @@ Current state: **v0.1.0 public communications foundation release**. This repo sh
 - It does not produce campaign, advocacy, or partisan content.
 - It does not provide legal advice.
 - It does not certify translations or accessibility compliance.
-- It does not call live LLMs in v0.1.0.
+- It does not call live LLMs in v0.1.1.
 - It does not replace a communications system of record.
 
 ## API Surface
@@ -36,7 +36,7 @@ Current state: **v0.1.0 public communications foundation release**. This repo sh
 
 ## Local Development
 
-CivicComms v0.1.0 is pinned to `civiccore==0.2.0`.
+CivicComms v0.1.1 is pinned to `civiccore==0.3.0`.
 
 ```bash
 python -m pip install -e ".[dev]"

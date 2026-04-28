@@ -1,7 +1,7 @@
 """FastAPI runtime foundation for CivicComms."""
 
 from civiccore import __version__ as CIVICCORE_VERSION
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -20,6 +20,12 @@ app = FastAPI(
     version=__version__,
     description="Source-backed public explainers, meeting summaries, newsletters, FAQs, and audience-variant draft support for CivicSuite.",
 )
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon() -> Response:
+    """Return an empty favicon response so browser QA has a clean console."""
+
+    return Response(status_code=204)
 
 
 class SourceReviewRequest(BaseModel):
@@ -70,7 +76,7 @@ def root() -> dict[str, str]:
             "legal advice, certified translation, live LLM calls, social media posting, and "
             "communications system-of-record integrations are not implemented yet."
         ),
-        "next_step": "Post-v0.1.0 roadmap: source connector imports, CivicAccess review handoff, and approval queues",
+        "next_step": "Post-v0.1.1 roadmap: source connector imports, CivicAccess review handoff, and approval queues",
     }
 
 

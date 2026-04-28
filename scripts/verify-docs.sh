@@ -35,7 +35,7 @@ if grep -RInE 'Civic311|civic311|Open311|system-of-record integrations are onlin
   exit 1
 fi
 
-for token in CivicComms civiccomms "v0.1.0" "civiccore==0.2.0"; do
+for token in CivicComms civiccomms "v0.1.1" "civiccore==0.3.0"; do
   if ! grep -RIn "$token" README.md USER-MANUAL.md docs/index.html CHANGELOG.md >/dev/null; then
     echo "FAIL: expected token missing from current-facing docs: $token" >&2
     exit 1

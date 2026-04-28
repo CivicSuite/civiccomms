@@ -9,6 +9,7 @@ def render_public_lookup_page() -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
 <title>CivicComms - public explainer support</title>
 <style>
 :root{--ink:#17202a;--blue:#174f6f;--gold:#d7a94b;--paper:#fffaf0}
@@ -25,15 +26,15 @@ h1{font:700 clamp(2.35rem,7vw,5.4rem)/.95 Georgia,serif;margin:.1em 0}.lede{font
 <header>
   <p class="eyebrow">CivicSuite / CivicComms</p>
   <h1>Public explanations with sources attached.</h1>
-  <p class="lede">CivicComms v0.1.0 helps staff shape meeting summaries, ordinance explainers, newsletters, FAQs, and audience variants from named municipal source material.</p>
-  <p><span class="badge">Shipping v0.1.0</span></p>
+  <p class="lede">CivicComms v0.1.1 helps staff shape meeting summaries, ordinance explainers, newsletters, FAQs, and audience variants from named municipal source material.</p>
+  <p><span class="badge">Shipping v0.1.1</span></p>
 </header>
 <main>
   <section class="grid" aria-label="CivicComms release status">
     <article class="card"><h2>What ships</h2><ul><li>Source-readiness review.</li><li>Meeting summary draft outlines.</li><li>Ordinance plain-language explainer drafts.</li><li>Newsletter and FAQ draft scaffolds.</li><li>Audience-specific variant drafts.</li></ul></article>
     <article class="card"><h2>Human approval required</h2><p>Every draft must be reviewed, cited, edited, and published by staff. CivicComms does not autonomously publish or post content.</p></article>
-    <article class="card"><h2>Boundaries</h2><p>No campaign or advocacy content, no legal advice, no certified translation, no live LLM calls, and no communications system-of-record integrations ship in v0.1.0.</p></article>
-    <article class="card"><h2>Dependency</h2><p>Pinned to <code>civiccore==0.2.0</code>. CivicCore remains dependency-only; it never imports from CivicComms.</p></article>
+    <article class="card"><h2>Boundaries</h2><p>No campaign or advocacy content, no legal advice, no certified translation, no live LLM calls, and no communications system-of-record integrations ship in v0.1.1.</p></article>
+    <article class="card"><h2>Dependency</h2><p>Pinned to <code>civiccore==0.3.0</code>. CivicCore remains dependency-only; it never imports from CivicComms.</p></article>
   </section>
 </main>
 <footer><p>Apache 2.0 code. CC BY 4.0 docs. Run locally by the city.</p></footer>
