@@ -10,10 +10,10 @@
 ## Hard Boundaries
 
 - CivicComms never publishes autonomously, creates campaign or advocacy content, provides legal advice, certifies translations, posts to social media, or updates a communications system of record.
-- CivicComms v0.1.0 must not call live LLMs or live publishing/social-media/communications systems.
+- CivicComms v0.1.1 must not call live LLMs or live publishing/social-media/communications systems.
 - Every generated artifact is a draft requiring staff review, citation verification, approval, and publication through official city channels.
 - CivicComms depends on CivicCore; CivicCore must never depend on CivicComms.
-- CivicComms may reference CivicClerk, CivicCode, and CivicAccess concepts only through released APIs or deterministic sample data in v0.1.0.
+- CivicComms may reference CivicClerk, CivicCode, and CivicAccess concepts only through released APIs or deterministic sample data in v0.1.1.
 
 ## Verification
 

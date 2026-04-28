@@ -107,7 +107,7 @@ def test_public_ui_route_is_accessible_and_honest() -> None:
     response = client.get("/civiccomms")
 
     assert response.status_code == 200
-    assert "CivicComms v0.1.0" in response.text
+    assert "CivicComms v0.1.1" in response.text
     assert "Human approval required" in response.text
     assert "no campaign" in response.text.lower()
     assert "live LLM calls" in response.text
