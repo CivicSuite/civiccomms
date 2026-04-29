@@ -12,12 +12,12 @@ body{margin:0;font-family:"Aptos","Segoe UI",sans-serif;color:#17202a;background
 <header>
   <p class="eyebrow">CivicSuite / CivicComms</p>
   <h1>Explain city work without losing the source trail.</h1>
-  <p class="lede">CivicComms v0.1.1 ships a foundation for source-readiness review, meeting summary outlines, ordinance explainers, newsletters, FAQ prompts, and audience-specific draft variants.</p>
+  <p class="lede">CivicComms v0.1.1 ships a foundation for source-readiness review, meeting summary outlines, optional database-backed draft records, ordinance explainers, newsletters, FAQ prompts, and audience-specific draft variants.</p>
   <p><span class="badge">Shipping v0.1.1</span></p>
 </header>
 <main>
   <section class="grid">
-    <article class="card"><h2>What ships</h2><ul><li>Source-readiness checks.</li><li>Meeting summary draft outlines.</li><li>Ordinance explainer drafts.</li><li>Newsletter and FAQ scaffolds.</li><li>Audience variant drafts.</li><li>Public sample UI at <code>/civiccomms</code>.</li></ul></article>
+    <article class="card"><h2>What ships</h2><ul><li>Source-readiness checks.</li><li>Meeting summary draft outlines.</li><li>Optional draft persistence with <code>CIVICCOMMS_DRAFT_DB_URL</code>.</li><li>Ordinance explainer drafts.</li><li>Newsletter and FAQ scaffolds.</li><li>Audience variant drafts.</li><li>Public sample UI at <code>/civiccomms</code>.</li></ul></article>
     <article class="card"><h2>What does not ship</h2><p>CivicComms does not publish autonomously, create campaign or advocacy content, provide legal advice, certify translations, call live LLMs, post to social media, or replace a communications system of record.</p></article>
     <article class="card"><h2>Repository</h2><p><a href="https://github.com/CivicSuite/civiccomms">github.com/CivicSuite/civiccomms</a></p></article>
     <article class="card"><h2>Dependency</h2><p>Pinned to <code>civiccore==0.3.0</code>. CivicCore remains dependency-only; it never imports from CivicComms.</p></article>

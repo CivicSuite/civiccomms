@@ -6,7 +6,7 @@ For Non-Technical Users
 
 CivicComms helps staff turn city source material into public-facing draft communications. It can review whether sources and citations are present, outline meeting summaries, draft ordinance explainers, structure newsletters, suggest FAQ prompts, and create audience-specific variants.
 
-Current state: 0.1.1 public communications foundation release. CivicComms does not publish or post autonomously, create campaign or advocacy content, provide legal advice, certify translations, call live LLMs, post to social media, or replace a communications system of record. Staff own every draft, citation, approval, and publication decision.
+Current state: 0.1.1 public communications foundation plus draft persistence release. CivicComms can optionally save source review and meeting summary draft records when IT configures CIVICCOMMS_DRAFT_DB_URL. CivicComms does not publish or post autonomously, create campaign or advocacy content, provide legal advice, certify translations, call live LLMs, post to social media, or replace a communications system of record. Staff own every draft, citation, approval, and publication decision.
 
 For IT and Technical Staff
 --------------------------
@@ -17,7 +17,9 @@ CivicComms is a FastAPI Python package pinned to civiccore==0.3.0. The current r
 - GET /health
 - GET /civiccomms
 - POST /api/v1/civiccomms/source-review
+- GET /api/v1/civiccomms/source-review/{review_id}
 - POST /api/v1/civiccomms/meeting-summary
+- GET /api/v1/civiccomms/meeting-summary/{summary_id}
 - POST /api/v1/civiccomms/ordinance-summary
 - POST /api/v1/civiccomms/newsletter
 - POST /api/v1/civiccomms/faq
@@ -29,7 +31,9 @@ python -m pip install -e ".[dev]"
 python -m pytest -q
 bash scripts/verify-release.sh
 
+Set CIVICCOMMS_DRAFT_DB_URL to enable local SQLAlchemy-backed source review and meeting summary draft records. If the variable is not set, CivicComms keeps deterministic stateless behavior and retrieval endpoints return actionable configuration guidance.
+
 Architecture
 ------------
 
-CivicComms depends on CivicCore. CivicCore does not depend on CivicComms. CivicComms v0.1.1 uses deterministic sample source-backed drafting only; autonomous publication, campaign or advocacy content, legal advice, certified translation, live LLM calls, social media posting, and production communications-system integrations are future work.
+CivicComms depends on CivicCore. CivicCore does not depend on CivicComms. CivicComms v0.1.1 uses deterministic sample source-backed drafting plus optional local draft persistence; autonomous publication, campaign or advocacy content, legal advice, certified translation, live LLM calls, social media posting, and production communications-system integrations are future work.
