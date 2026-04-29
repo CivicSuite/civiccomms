@@ -81,10 +81,12 @@ def test_civiccomms_support_apis_success_shape() -> None:
         "/api/v1/civiccomms/source-review",
         json={"source_titles": ["Council packet"], "citations": ["packet p. 2"]},
     ).json()["ready_for_draft"] is True
-    assert client.post(
+    meeting_response = client.post(
         "/api/v1/civiccomms/meeting-summary",
         json={"meeting_title": "Council", "actions": ["approved item 4"], "citations": ["minutes p. 3"]},
-    ).status_code == 200
+    )
+    assert meeting_response.status_code == 200
+    assert meeting_response.json()["summary_id"] is None
     assert client.post(
         "/api/v1/civiccomms/ordinance-summary",
         json={"ordinance_id": "ORD-1", "topic": "trees", "citations": ["code 12.01"]},

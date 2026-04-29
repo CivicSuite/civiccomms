@@ -16,7 +16,8 @@ def test_root_endpoint_states_runtime_boundary() -> None:
 
     assert payload["name"] == "CivicComms"
     assert payload["version"] == "0.1.1"
-    assert payload["status"] == "public communications foundation"
+    assert payload["status"] == "public communications foundation plus draft persistence"
+    assert "database-backed source review and meeting summary draft records" in payload["message"]
     assert "autonomous publication" in payload["message"]
     assert "Post-v0.1.1 roadmap" in payload["next_step"]
 

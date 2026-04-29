@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.1.1] - 2026-04-28
 
+### Added
+
+- Optional SQLAlchemy-backed source review and meeting summary draft records via `CIVICCOMMS_DRAFT_DB_URL`.
+- Source review and meeting summary retrieval endpoints for persisted records.
+
 ### Changed
 
 - Dependency-alignment release: moved CivicComms to `civiccore==0.3.0` while preserving the existing v0.1.0 runtime foundation behavior.
